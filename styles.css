@@ -65,25 +65,27 @@ a{color:inherit;}
 .flower--bg{
   width:439px;
   max-width:100%;
-  left:0;
-  top:52px;
-  opacity:.12;
+  left:1px;
+  top:61px;
+  opacity:.055;
 }
 .flower--a{
   width:200px;
   max-width:46%;
-  left:56%;
-  top:24px;
+  left:58%;
+  top:133px;
   transform:rotate(135deg);
-  opacity:.25;
+  transform-origin:top left;
+  opacity:.40;
 }
 .flower--b{
   width:200px;
   max-width:46%;
-  left:40%;
-  top:268px;
+  left:43%;
+  top:284px;
   transform:rotate(-25deg);
-  opacity:.20;
+  transform-origin:top left;
+  opacity:.34;
 }
 .hero > *:not(.flower){ position:relative; z-index:1; }
 
