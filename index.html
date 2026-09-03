@@ -100,7 +100,8 @@
 
   .parents{
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
+    align-items:flex-start;
     gap:24px;
     font-size:10px;
     font-weight:400;
@@ -108,8 +109,15 @@
     line-height:1.9;
     margin-bottom:32px;
   }
-  .parents__side{ flex:1 1 0; }
-  .parents__side:last-child{ text-align:right; }
+  .parents__side{
+    flex:1 1 0;
+    padding:0 8px;
+    text-align:left;
+  }
+  .parents__side:last-child{
+    padding:0 5px;
+    text-align:right;
+  }
 
   .lead{
     font-size:14px;
