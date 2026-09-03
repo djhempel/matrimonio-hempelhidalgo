@@ -7,13 +7,11 @@ lo único que cambia entre ellas es el formulario de confirmación.
 
 | Invitado | URL | Diseño | Formulario |
 |---|---|---|---|
-| Comida, con pareja | `/comida-con-pareja/` | comida | `HeUdNsiieHcqByjm6` |
-| Comida, sin pareja | `/comida-sin-pareja/` | comida | `VJx1YPKJxHdeKXPX8` |
-| Comida, y su pareja a la fiesta | `/comida-pareja-fiesta/` | comida | `r22XT7neHURakDuq7` |
-| Fiesta, con pareja | `/fiesta-con-pareja/` | fiesta | `UDZXr8xiBWirx5Kq7` |
-| Fiesta, sin pareja | `/fiesta-sin-pareja/` | fiesta | `hq4uX651Cn22gwy86` |
-
-Las URLs completas son `https://<usuario>.github.io/<repo>/<carpeta>/`.
+| Comida, con pareja | https://djhempel.github.io/matrimonio-hempelhidalgo/comida-con-pareja/ | comida | `HeUdNsiieHcqByjm6` |
+| Comida, sin pareja | https://djhempel.github.io/matrimonio-hempelhidalgo/comida-sin-pareja/ | comida | `VJx1YPKJxHdeKXPX8` |
+| Comida, y su pareja a la fiesta | https://djhempel.github.io/matrimonio-hempelhidalgo/comida-pareja-fiesta/ | comida | `r22XT7neHURakDuq7` |
+| Fiesta, con pareja | https://djhempel.github.io/matrimonio-hempelhidalgo/fiesta-con-pareja/ | fiesta | `UDZXr8xiBWirx5Kq7` |
+| Fiesta, sin pareja | https://djhempel.github.io/matrimonio-hempelhidalgo/fiesta-sin-pareja/ | fiesta | `hq4uX651Cn22gwy86` |
 
 En el caso de "comida y pareja a la fiesta" se usa el diseño de comida;
 que la pareja llega a partir de las 22:00 se aclara dentro del formulario.
