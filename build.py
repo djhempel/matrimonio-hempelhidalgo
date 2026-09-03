@@ -8,6 +8,7 @@ textos) hay que editar la plantilla y volver a correr este script:
     python3 build.py
 """
 
+import hashlib
 from pathlib import Path
 
 RAIZ = Path(__file__).parent
@@ -23,6 +24,11 @@ INVITACIONES = {
 
 
 def main():
+    # Version del CSS: cambia sola cuando cambia styles.css, para que los
+    # navegadores no sigan mostrando la version vieja que tenian en cache.
+    css = (RAIZ / "styles.css").read_bytes()
+    css_ver = hashlib.sha1(css).hexdigest()[:8]
+
     plantillas = {
         nombre: (RAIZ / "_templates" / f"{nombre}.html").read_text(encoding="utf-8")
         for nombre in {p for p, _ in INVITACIONES.values()}
@@ -30,13 +36,17 @@ def main():
 
     for carpeta, (plantilla, rsvp) in INVITACIONES.items():
         html = plantillas[plantilla]
-        if html.count("{{RSVP_URL}}") != 1:
-            raise SystemExit(f"_templates/{plantilla}.html debe tener exactamente un {{{{RSVP_URL}}}}")
+        for marca, valor in (("{{RSVP_URL}}", rsvp), ("{{CSS_VER}}", css_ver)):
+            if html.count(marca) != 1:
+                raise SystemExit(f"_templates/{plantilla}.html debe tener exactamente un {marca}")
+            html = html.replace(marca, valor)
 
         destino = RAIZ / carpeta
         destino.mkdir(exist_ok=True)
-        (destino / "index.html").write_text(html.replace("{{RSVP_URL}}", rsvp), encoding="utf-8")
+        (destino / "index.html").write_text(html, encoding="utf-8")
         print(f"{carpeta}/index.html  <-  {plantilla}  ({rsvp})")
+
+    print(f"\nstyles.css?v={css_ver}")
 
 
 if __name__ == "__main__":

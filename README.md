@@ -32,7 +32,11 @@ un horario, una dirección o un texto:
 2. Corré `python3 build.py`
 3. Commit y push
 
-Para cambiar el diseño de las dos versiones a la vez, editá `styles.css`.
+Para cambiar el diseño de las dos versiones a la vez, editá `styles.css`
+y **corré `build.py` igual**: el script le pone al link del CSS una
+versión calculada del archivo (`styles.css?v=...`), y sin eso los
+navegadores siguen mostrando la versión vieja que tienen en caché.
+
 Para agregar o cambiar un formulario, editá el diccionario `INVITACIONES`
 en `build.py` y volvé a correrlo.
 
