@@ -7,18 +7,20 @@
 <meta name="description" content="Invitación de matrimonio de Diego & Josefina">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Cinzel+Decorative:wght@400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#fdfaf4;
-    --cream-band:#f6f4ea;
-    --green:#4d6324;
-    --green-btn:#4a5c3a;
-    --green-icon:#8b9169;
-    --sage:#7a8c6e;
+    --cream:#FDFAF4;
+    --cream-band:#F6F4EA;
+    --green:#4D6324;
+    --green-deep:#4A5C3A;
+    --green-label:#768848;
+    --sage:#7A8C6E;
     --maroon:#852335;
-    --serif:'Playfair Display', serif;
-    --sans:'Quicksand', sans-serif;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Jost', system-ui, -apple-system, sans-serif;
+    --display:'Cinzel Decorative', Georgia, serif;
+    --display-alt:'Cinzel', Georgia, serif;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -27,143 +29,184 @@
     background:var(--cream);
     color:var(--green);
     font-family:var(--sans);
-    font-weight:500;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
   }
   .invite{
-    max-width:520px;
+    max-width:440px;
     margin:0 auto;
     position:relative;
     overflow:hidden;
   }
   section{position:relative;}
+
+  /* eyebrow = small uppercase label (Jost) */
   .eyebrow{
+    font-family:var(--sans);
     text-transform:uppercase;
-    letter-spacing:.3em;
-    font-size:.8rem;
-    font-weight:600;
+    letter-spacing:4px;
+    font-size:12px;
+    font-weight:400;
     color:var(--green);
     text-align:center;
-    margin:0 0 .6em;
+    margin:0 0 12px;
   }
+  /* eyebrow.serif = section heading (Cormorant Garamond) */
   .eyebrow.serif{
     font-family:var(--serif);
+    font-size:20px;
+    font-weight:400;
     text-transform:uppercase;
-    letter-spacing:.25em;
-    font-weight:500;
-    font-size:1.6rem;
-    margin-bottom:1.2em;
+    letter-spacing:2.88px;
+    margin:0 0 24px;
   }
   p{line-height:1.55;}
   a{color:inherit;}
 
   /* ---------- HERO ---------- */
   .hero{
-    padding:56px 34px 30px;
+    padding:104px 32px 34px;
     text-align:center;
   }
   .flower{
     position:absolute;
-    width:340px;
-    max-width:60%;
-    opacity:.45;
     pointer-events:none;
     z-index:0;
   }
-  .flower--tl{ top:-10px; left:-60px; }
-  .flower--br{
+  .flower--bg{
+    width:439px;
+    max-width:100%;
+    left:0;
+    top:52px;
+    opacity:.20;
+  }
+  .flower--a{
     width:200px;
-    bottom:10px;
-    right:-140px;
-    transform:scaleX(-1);
-    opacity:.3;
+    max-width:46%;
+    left:56%;
+    top:24px;
+    transform:rotate(135deg);
+    opacity:.42;
+  }
+  .flower--b{
+    width:200px;
+    max-width:46%;
+    left:40%;
+    top:268px;
+    transform:rotate(-25deg);
+    opacity:.34;
   }
   .hero > *:not(.flower){ position:relative; z-index:1; }
 
   .parents{
     display:flex;
     justify-content:space-between;
-    gap:10px;
-    font-size:.82rem;
-    line-height:1.5;
-    margin-bottom:42px;
+    gap:24px;
+    font-size:10px;
+    font-weight:400;
+    letter-spacing:.88px;
+    line-height:1.9;
+    margin-bottom:32px;
   }
-  .parents__side{ width:48%; }
+  .parents__side{ flex:1 1 0; }
   .parents__side:last-child{ text-align:right; }
 
   .lead{
-    font-size:1.05rem;
-    margin:0 0 28px;
+    font-size:14px;
+    font-weight:400;
+    letter-spacing:.88px;
+    line-height:1.5;
+    margin:0 0 24px;
   }
+  .lead--close{ letter-spacing:.52px; margin:0 0 44px; }
+
   .names{
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:2.6rem;
-    letter-spacing:.03em;
-    margin:0 0 30px;
+    font-family:var(--display);
+    font-weight:400;
+    font-size:24px;
+    letter-spacing:.80px;
+    line-height:1.35;
+    margin:0 0 24px;
   }
-  .names .amp{ font-style:italic; font-weight:500; }
+  .names .amp{ font-style:normal; }
 
   .date-label{
     font-family:var(--sans);
+    font-weight:500;
+    font-size:16px;
+    line-height:1.6;
+    margin:0 0 34px;
+  }
+  .date-label .day{
+    display:block;
     text-transform:uppercase;
-    letter-spacing:.25em;
-    font-weight:700;
-    font-size:1.4rem;
-    margin:34px 0 18px;
+    letter-spacing:4px;
+  }
+  .date-label .date{
+    display:block;
+    letter-spacing:3.17px;
   }
   .arrow-down{
-    font-size:1.4rem;
-    color:var(--green);
-    opacity:.7;
+    font-size:1.25rem;
+    color:var(--green-deep);
+    opacity:.45;
   }
 
   /* ---------- COUNTDOWN ---------- */
   .countdown{
     background:var(--cream-band);
-    padding:34px 20px 40px;
+    padding:16px 24px;
     text-align:center;
   }
+  .countdown .eyebrow{ margin:0 0 4px; }
   .countdown__grid{
     display:flex;
-    align-items:baseline;
+    align-items:flex-end;
     justify-content:center;
-    gap:14px;
+    gap:8px;
   }
+  .countdown__grid > div{ width:64px; }
   .countdown__grid .num{
     font-family:var(--sans);
-    font-weight:700;
-    font-size:2.7rem;
+    font-weight:300;
+    font-size:26px;
     display:block;
-    line-height:1;
+    line-height:1.3;
   }
   .countdown__grid small{
     display:block;
     text-transform:uppercase;
-    letter-spacing:.18em;
-    font-size:.68rem;
-    font-weight:600;
-    color:#8a9678;
-    margin-top:6px;
+    letter-spacing:2px;
+    font-size:10px;
+    font-weight:400;
+    color:var(--green-label);
   }
   .countdown__grid .dot{
+    font-family:var(--serif);
     color:var(--maroon);
-    font-size:2rem;
-    font-weight:700;
-    transform:translateY(-14px);
+    font-size:24px;
+    font-weight:300;
+    line-height:1;
+    transform:translateY(-20px);
   }
 
   /* ---------- CEREMONIA / RECEPCION ---------- */
   .block{
-    padding:46px 34px;
+    padding:48px 24px;
     text-align:center;
   }
   .photo-blob{
-    width:100%;
-    max-width:340px;
-    aspect-ratio:1/1;
-    margin:0 auto 30px;
-    -webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 42%, black 45%, transparent 78%);
-            mask-image:radial-gradient(ellipse 62% 58% at 50% 42%, black 45%, transparent 78%);
+    width:230px;
+    max-width:78%;
+    aspect-ratio:230/198;
+    margin:0 auto 24px;
+    -webkit-mask-image:radial-gradient(ellipse 65% 60% at 50% 48%, #000 15%, rgba(0,0,0,.85) 30%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.15) 68%, transparent 80%);
+            mask-image:radial-gradient(ellipse 65% 60% at 50% 48%, #000 15%, rgba(0,0,0,.85) 30%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.15) 68%, transparent 80%);
+  }
+  .photo-blob--wide{
+    width:293px;
+    max-width:92%;
+    aspect-ratio:293/192;
   }
   .photo-blob img{
     width:100%;
@@ -173,112 +216,152 @@
   .place-name{
     font-family:var(--serif);
     font-style:italic;
-    font-weight:500;
-    font-size:1.9rem;
-    margin:0 0 10px;
+    font-weight:300;
+    font-size:28px;
+    line-height:1.2;
+    color:var(--green-deep);
+    margin:0 0 8px;
   }
   .time{
-    font-weight:700;
-    font-size:1.2rem;
-    margin:0 0 14px;
+    font-weight:500;
+    font-size:18px;
+    letter-spacing:1.40px;
+    color:var(--green-deep);
+    margin:0 0 8px;
   }
   .address{
-    font-size:.95rem;
-    margin:0 0 28px;
+    font-size:16px;
+    font-weight:300;
+    letter-spacing:1.28px;
+    line-height:1.5;
+    margin:0 0 32px;
   }
 
   .btn{
-    display:inline-block;
-    background:var(--green-btn);
-    color:#fdfaf4;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    background:var(--green-deep);
+    color:var(--cream);
     text-decoration:none;
     text-transform:uppercase;
-    letter-spacing:.2em;
-    font-size:.85rem;
-    font-weight:600;
-    padding:16px 28px;
+    font-size:14px;
+    font-weight:300;
+    letter-spacing:1.98px;
+    line-height:1;
+    min-height:42px;
+    padding:11px 20px;
     width:100%;
-    max-width:340px;
+    max-width:238px;
   }
-  .btn__icon{ margin-right:8px; vertical-align:-2px; }
+  .btn--cta{ letter-spacing:3.60px; }
+  .btn__icon{ flex:none; }
 
   /* ---------- REGALOS ---------- */
   .stripes{
-    padding:26px 18px;
+    padding:82px 52px;
     background-image:repeating-linear-gradient(
       90deg,
-      var(--green-btn) 0px, var(--green-btn) 22px,
-      transparent 22px, transparent 44px
+      var(--cream) 0px, var(--cream) 14px,
+      var(--green-deep) 14px, var(--green-deep) 28px
     );
   }
   .stripes__card{
     background:var(--cream-band);
-    padding:44px 30px 38px;
+    padding:24px 20px;
     text-align:center;
+  }
+  .stripes__card .eyebrow.serif{
+    letter-spacing:4px;
+    margin:0 0 12px;
   }
   .stripes__card .icon{
-    width:78px;
-    margin-bottom:18px;
+    width:77px;
+    opacity:.60;
+    margin-bottom:12px;
   }
   .stripes__card p{
-    font-size:1rem;
-    margin:0 0 24px;
+    font-size:16px;
+    font-weight:300;
+    letter-spacing:1.28px;
+    margin:0 0 12px;
   }
-  .stripes__card .btn{ margin:0 auto; }
 
   /* ---------- RSVP ---------- */
-  .rsvp{ padding:50px 34px 0; text-align:center; }
+  .rsvp{ padding:48px 24px 0; text-align:center; }
+  .rsvp .eyebrow.serif{ letter-spacing:4px; margin:0 0 8px; }
   .rsvp .icon--rsvp{
-    width:150px;
-    margin:14px auto 26px;
+    width:77px;
+    opacity:.42;
+    margin:0 auto 8px;
     display:block;
   }
-  .rsvp p{ font-size:1.02rem; margin:0 0 26px; }
-  .btn--wide{ max-width:340px; }
+  .rsvp p{
+    font-size:16px;
+    font-weight:300;
+    margin:0 0 16px;
+  }
+  .btn--wide{ max-width:290px; padding:11px 16px; }
 
   .calendar-block{
-    padding:38px 34px 56px;
+    padding:32px 24px 48px;
     text-align:center;
+  }
+  .calendar-block .eyebrow{
+    font-size:14px;
+    font-weight:300;
+    letter-spacing:2.50px;
+    margin:0 0 24px;
   }
   .cal-links{
     display:flex;
     justify-content:center;
-    gap:34px;
+    gap:24px;
     flex-wrap:wrap;
   }
   .cal-links a{
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
     text-decoration:none;
     text-transform:uppercase;
-    letter-spacing:.12em;
-    font-size:.85rem;
-    font-weight:600;
-    border-bottom:1.5px solid var(--green);
-    padding-bottom:4px;
+    letter-spacing:1.32px;
+    font-size:11px;
+    font-weight:300;
+    color:var(--green-deep);
+    border-bottom:.5px solid var(--green-deep);
+    padding-bottom:2px;
     white-space:nowrap;
   }
-  .cal-icon{ margin-right:6px; vertical-align:-3px; }
+  .cal-icon{ flex:none; }
 
   /* ---------- FOOTER ---------- */
   .footer{
     background:var(--sage);
-    color:#fdfaf4;
+    color:var(--cream);
     text-align:center;
-    padding:48px 20px 56px;
+    padding:24px;
   }
   .footer .eyebrow{
-    color:#e7ecdf;
-    font-size:.78rem;
+    color:var(--cream);
+    font-size:9px;
+    font-weight:300;
+    letter-spacing:3.30px;
+    margin:0 0 8px;
   }
   .footer__names{
-    font-family:var(--serif);
-    font-style:italic;
-    font-weight:600;
-    font-size:2.2rem;
-    margin:6px 0 14px;
+    font-family:var(--display-alt);
+    font-style:normal;
+    font-weight:400;
+    font-size:16px;
+    margin:0 0 8px;
   }
   .footer__date{
-    letter-spacing:.3em;
-    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:3.30px;
+    font-size:12px;
+    font-weight:300;
     margin:0;
   }
 </style>
@@ -288,8 +371,9 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img class="flower flower--tl" src="assets/flower.png" alt="" aria-hidden="true">
-    <img class="flower flower--br" src="assets/flower.png" alt="" aria-hidden="true">
+    <img class="flower flower--bg" src="assets/flower.png" alt="" aria-hidden="true">
+    <img class="flower flower--a" src="assets/flower.png" alt="" aria-hidden="true">
+    <img class="flower flower--b" src="assets/flower.png" alt="" aria-hidden="true">
 
     <div class="parents">
       <div class="parents__side">
@@ -304,9 +388,9 @@
 
     <p class="lead">Participan a usted en el matrimonio de sus hijos</p>
     <h1 class="names">Diego <span class="amp">&amp;</span> Josefina</h1>
-    <p class="lead">Con mucha alegría queremos invitarlos a acompañarnos<br>en este día tan especial.</p>
+    <p class="lead lead--close">Con mucha alegría queremos invitarlos a acompañarnos<br>en este día tan especial.</p>
 
-    <p class="date-label">Viernes<br>30·10·2026</p>
+    <p class="date-label"><span class="day">Viernes</span><span class="date">30·10·2026</span></p>
     <div class="arrow-down">&#8595;</div>
   </section>
 
@@ -338,7 +422,7 @@
   <!-- RECEPCION -->
   <section class="block">
     <h2 class="eyebrow serif">Recepción</h2>
-    <div class="photo-blob"><img src="assets/venue.jpg" alt="Arboleda de Chicureo"></div>
+    <div class="photo-blob photo-blob--wide"><img src="assets/venue.jpg" alt="Arboleda de Chicureo"></div>
     <h3 class="place-name">Arboleda de Chicureo</h3>
     <p class="address">Alba 11640, Chicureo</p>
     <a class="btn" target="_blank" rel="noopener"
@@ -350,10 +434,10 @@
   <!-- REGALOS -->
   <section class="stripes">
     <div class="stripes__card">
-      <img class="icon" src="assets/gift.png" alt="">
       <h2 class="eyebrow serif">Regalos</h2>
+      <img class="icon" src="assets/gift.png" alt="">
       <p>Novios Falabella: Código 2105001</p>
-      <a class="btn" target="_blank" rel="noopener" href="https://novios.falabella.com/info-evento/evento?codigoEvento=2105001">Regalar</a>
+      <a class="btn btn--cta" target="_blank" rel="noopener" href="https://novios.falabella.com/info-evento/evento?codigoEvento=2105001">Regalar</a>
     </div>
   </section>
 
@@ -362,7 +446,7 @@
     <h2 class="eyebrow serif">RSVP</h2>
     <img class="icon--rsvp" src="assets/rsvp.png" alt="">
     <p>Queremos contar con tu presencia en nuestro día.</p>
-    <a class="btn btn--wide" target="_blank" rel="noopener"
+    <a class="btn btn--cta btn--wide" target="_blank" rel="noopener"
        href="https://forms.gle/HeUdNsiieHcqByjm6">Confirmar asistencia</a>
   </section>
 
